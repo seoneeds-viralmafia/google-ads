@@ -21,7 +21,15 @@ body{
   position: relative;
   overflow-x: hidden;
 }
+.blog-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
+.blog-meta {
+    color: #64748b;
+    font-size: 14px;
+}
 /* Decorative Floating Circles */
 body::before,
 body::after{
