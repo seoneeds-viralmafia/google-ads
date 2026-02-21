@@ -1,55 +1,158 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
-    margin: 0;
-    padding: 0;
-    line-height: 1.7;
+/* ---------- Base Colors ---------- */
+:root{
+  --pastel-green: #eafaf1;
+  --soft-green: #d4f5e2;
+  --accent-green: #2fbf71;
+  --dark-text: #1f2937;
+  --light-text: #4b5563;
+  --white: #ffffff;
+  --shadow: 0 15px 35px rgba(47, 191, 113, 0.15);
+  --radius: 18px;
 }
 
-.container {
-    max-width: 800px;
-    margin: 40px auto;
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+/* ---------- Body ---------- */
+body{
+  margin:0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--pastel-green);
+  color: var(--text-dark);
+  line-height: 1.8;
+  padding: 50px 15px;
+  position: relative;
+  overflow-x: hidden;
 }
 
-h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #222;
+/* Decorative Floating Circles */
+body::before,
+body::after{
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
 }
 
-h2 {
-    margin-top: 30px;
-    color: #333;
+body::before{
+  width: 350px;
+  height: 350px;
+  background: var(--soft-green);
+  top: -100px;
+  left: -120px;
+  opacity: 0.5;
 }
 
-p {
-    color: #555;
-    margin-bottom: 15px;
+body::after{
+  width: 250px;
+  height: 250px;
+  background: #dbeafe;
+  bottom: -80px;
+  right: -100px;
+  opacity: 0.6;
 }
 
-ul {
-    margin-left: 20px;
-    margin-bottom: 20px;
+/* ---------- Container Card ---------- */
+.container{
+  max-width: 900px;
+  margin: auto;
+  background: var(--white);
+  padding: 45px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: relative;
+  z-index: 1;
 }
 
-li {
-    margin-bottom: 8px;
+/* ---------- Typography ---------- */
+h1{
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: var(--text-dark);
 }
 
-a {
-    color: #0073e6;
-    text-decoration: none;
-    font-weight: 600;
+.intro{
+  font-size: 18px;
+  background: #f1f8ff;
+  padding: 18px;
+  border-left: 5px solid var(--accent-green);
+  border-radius: 12px;
+  margin-bottom: 25px;
+  color: var(--text-light);
 }
 
-a:hover {
-    text-decoration: underline;
+h2{
+  margin-top: 35px;
+  margin-bottom: 12px;
+  color: var(--accent-green);
+  position: relative;
+  padding-bottom: 6px;
 }
 
-.intro {
-    font-size: 17px;
+h2::after{
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: var(--accent-green);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 3px;
+}
+
+/* ---------- Paragraph ---------- */
+p{
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+/* ---------- Links ---------- */
+a{
+  color: var(--accent-green);
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+a:hover{
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* ---------- List Design ---------- */
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 25px;
+}
+
+li{
+  padding: 12px 15px 12px 40px;
+  margin-bottom: 10px;
+  background: #f7fbff;
+  border-radius: 12px;
+  position: relative;
+  color: var(--text-light);
+  border: 1px solid #e0f0ff;
+}
+
+li::before{
+  content: "●";
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  font-size: 18px;
+  color: var(--accent-green);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px){
+  .container{
+    padding: 25px;
+  }
+
+  h1{
+    font-size: 24px;
+  }
+
+  .intro{
+    font-size: 16px;
+  }
 }
